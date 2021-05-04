@@ -51,6 +51,14 @@ class App extends React.Component {
     })
   }
 
+  //filters uncompleted tasks into array, leaving completed tasks out
+  clearCompleted = (e) => {
+    e.preventDefault();
+    this.setState({
+    tasks: this.state.tasks.filter((task) => !task.completed),
+    });
+  };
+
   render() {
     return (
       <div>
@@ -60,6 +68,7 @@ class App extends React.Component {
           toggleCompleted={this.toggleCompleted}
           />
         <TodoForm addItem={this.addItem}/>
+        <button onClick={this.clearCompleted}>Clear Completed</button>
       </div>
     );
   }

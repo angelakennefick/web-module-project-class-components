@@ -23,6 +23,7 @@ export default class TodoForm extends Component {
         });
     };
 
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -32,8 +33,8 @@ export default class TodoForm extends Component {
                     name= "todoText"
                     value={this.state.todoText}
                     onChange={this.handleChanges}
+                    placeholder= "Add Todo"
                     />
-                    <button>Add Todo</button>
             </form>
         )
     }
